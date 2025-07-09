@@ -1,0 +1,12 @@
+* text=auto eol=lf
+# 📦 通用文本文件自动处理
+*.md text=auto
+*.yaml text=auto
+*.astro text=auto
+
+# 二进制文件禁止转换
+*.png binary
+*.jpg binary
+
+# 特殊处理中文文件（可选）
+src/content/posts/*.md linguist-language=Markdown

@@ -1,0 +1,63 @@
+---
+// import { ThemeSwitch } from './ThemeSwitch'
+// import {  footer } from '@/config.json'
+import { getAllPostsWordCount } from '@/utils/content'
+// import { RunningDays } from './RunningDays'
+// import Link from './Link.astro'
+
+// const sinceYear = new Date(footer.startTime).getFullYear()
+// const thisYear = new Date().getFullYear()
+// const copyDate = sinceYear === thisYear ? thisYear : `${sinceYear} - ${thisYear}`
+
+const wordCount = await getAllPostsWordCount()
+
+const wordCountStr = (wordCount / 1000).toFixed(1) + 'k'
+---
+
+<footer class="footer">
+	<div class="waves">
+		<div class="wave" id="wave1"></div>
+		<div class="wave" id="wave2"></div>
+		<div class="wave" id="wave3"></div>
+		<div class="wave" id="wave4"></div>
+	</div>
+
+	<ul class="menu">
+		<li class="menu__item">
+			<a class="menu__link" href="#">共码了 {wordCountStr} 那么多字</a>
+		</li>
+		<li class="menu__item"><a class="menu__link" href="/about">About us</a></li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://astro.build/">使用了Astro博客框架</a>
+		</li>
+		<li class="menu__item">
+			<a href="https://travel.moe/go.html" target="_blank">
+				<img
+					src="https://travel.moe/images/logo/default-white.png"
+					style="width:auto;height:24px"
+					title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！"
+				/>
+			</a>
+		</li>
+	</ul>
+	<p><div class="quote">加载中...</div></p>
+	<p style="opacity: 0.75;">Made with 🤍 by chenlin</p>
+</footer>
+
+<script>
+	// 页面加载完成后自动调用API
+	document.addEventListener('DOMContentLoaded', () => {
+		fetch('https://v1.hitokoto.cn/?encode=text')
+			.then((response) => {
+				if (!response.ok) throw new Error('网络请求失败')
+				return response.text()
+			})
+			.then((data) => {
+				document.getElementsByClassName('quote')[0].textContent = data
+			})
+			.catch((error) => {
+				document.getElementsByClassName('quote')[0].textContent = '获取失败，请刷新重试'
+				console.error(error)
+			})
+	})
+</script>

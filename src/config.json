@@ -1,0 +1,177 @@
+{
+  "site": {
+    "url": "https://chenlin-eight.vercel.app",
+    "title": "不知道叫啥呀(〒︿〒)~",
+    "description": "雄关漫漫真如铁，而今迈步从头越。",
+    "keywords": "chenlin,blog,Astro,theme,博客",
+    "lang": "zh-CN",
+    "favicon": "https://img.picui.cn/free/2025/07/08/686d30dfb8671.png",
+    "appleTouchIcon": "https://img.picui.cn/free/2025/07/08/686d30dfb8671.png"
+  },
+  "author": {
+    "name": "Chenlin",
+    "twitterId": "@LiLiyawen",
+    "avatar": "https://i.mij.rip/2025/06/24/4af776eee4304880cc5d520cfede7009.jpeg",
+    "logo": "https://oiapi.net/API/BlueArchive?startText=chen&endText=lin"
+  },
+  "hero": {
+    "name": "Chenlin",
+    "bio": "雄关漫漫真如铁，而今迈步从头越。",
+    "description": "明哲保身，壮志凌云，立身处世，守正创新。",
+    "socials": [
+      {
+        "name": "Github",
+        "icon": "icon-github1",
+        "url": "https://github.com/xixi-cmd",
+        "color": "rgb(24, 23, 23)"
+      },
+      {
+        "name": "X",
+        "icon": "icon-tuite",
+        "url": "https://twitter.com/LiLiyawen",
+        "color": "rgb(36, 46, 54)"
+      },
+      {
+        "name": "Email",
+        "icon": "icon-youjian1",
+        "url": "mailto:3225454747@qq.com",
+        "color": "rgb(212, 70, 56)"
+      },
+      {
+        "name": "music",
+        "icon": "icon-wangyiyun",
+        "url": "https://music.163.com/#/user/home?id=3267730015",
+        "color": "#E60026"
+      },
+      {
+        "name": "zhihu",
+        "icon": "icon-zhihu",
+        "url": "https://www.zhihu.com/people/chenshang-53",
+        "color": "#0084FF"
+      }
+    ],
+    "yiyan": "为有牺牲多壮志，敢教日月换新天"
+  },
+  "color": {
+    "accent": [
+      {
+        "light": "#1772b4",
+        "dark": "#1772b4"
+      },
+      {
+        "light": "#0396FF",
+        "dark": "#ABDCFF"
+      },
+      {
+        "light": "#fb7287",
+        "dark": "#99D8CF"
+      },
+      {
+        "light": "#1772b4",
+        "dark": "#1772b4"
+      },
+      {
+        "light": "#9F44D3",
+        "dark": "#778beb"
+      },
+      {
+        "light": "#FF6666",
+        "dark": "#2c9678"
+      },
+      {
+        "light": "#F6416C",
+        "dark": "#2c9678"
+      },
+      {
+        "light": "#32CCBC",
+        "dark": "#ffee6f"
+      },
+      {
+        "light": "#33A6B8",
+        "dark": "#ee4866"
+      },
+      {
+        "light": "#1772b4",
+        "dark": "#f53b57"
+      }
+    ],
+    "bg": {
+      "primary": {
+        "light": "#ffffff",
+        "dark": "#1c1c1e"
+      },
+      "secondary": {
+        "light": "#f4f4f5",
+        "dark": "#27272a"
+      }
+    },
+    "text": {
+      "primary": {
+        "light": "#373a3c",
+        "dark": "#ffffff"
+      },
+      "secondary": {
+        "light": "#71717a",
+        "dark": "#b3b3b3"
+      }
+    },
+    "border": {
+      "primary": {
+        "light": "#e4e4e7",
+        "dark": "#3f3f46"
+      }
+    }
+  },
+  "menus": [
+    {
+      "name": "首页",
+      "link": "/",
+      "icon": "icon-Home"
+    },
+    {
+      "name": "归档",
+      "link": "/archives",
+      "icon": "icon-Folder"
+    },
+    {
+      "name": "标签",
+      "link": "/tags",
+      "icon": "icon-Dashboard"
+    },
+    {
+      "name": "关于",
+      "link": "/about",
+      "icon": "icon-Heart"
+    },
+    {
+      "name": "友联",
+      "link": "/friends",
+      "icon": "icon-Star"
+    }
+  ],
+  "posts": {
+    "perPage": 10
+  },
+  "footer": {
+    "startTime": "2025-06-27T00:00:00Z"
+  },
+  "waline": {
+    "serverURL": "https://waline.lxchapu.com"
+  },
+  "sponsor": {
+    "wechat": "/assets/ma.png"
+  },
+  "analytics": {
+    "enable": false,
+    "google": {
+      "measurementId": ""
+    },
+    "umami": {
+      "serverUrl": "",
+      "websiteId": ""
+    },
+    "microsoftClarity": {
+      "projectId": ""
+    }
+  }
+}
