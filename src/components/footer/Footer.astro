@@ -45,19 +45,45 @@ const wordCountStr = (wordCount / 1000).toFixed(1) + 'k'
 </footer>
 
 <script>
-	// 页面加载完成后自动调用API
 	document.addEventListener('DOMContentLoaded', () => {
-		fetch('https://v1.hitokoto.cn/?encode=text')
-			.then((response) => {
-				if (!response.ok) throw new Error('网络请求失败')
-				return response.text()
-			})
-			.then((data) => {
-				document.getElementsByClassName('quote')[0].textContent = data
-			})
-			.catch((error) => {
-				document.getElementsByClassName('quote')[0].textContent = '获取失败，请刷新重试'
-				console.error(error)
-			})
+		const quoteElement = document.querySelector('.quote')
+
+		// 检查 quoteElement 是否为 null
+		if (!quoteElement) {
+			console.error('引用元素未找到')
+			return // 如果引用元素未找到，直接退出脚本
+		}
+
+		// 尝试多个API，直到成功
+		const apis = [
+			'https://international.v1.hitokoto.cn/',
+			'https://api.gushi.ci/all.json',
+			'https://api.quotable.io/random',
+		]
+
+		const fetchWithFallback = async (urls: string[]) => {
+			for (const url of urls) {
+				try {
+					const response = await fetch(url)
+					if (!response.ok) continue
+
+					const data = await response.json()
+					// 根据不同API格式处理数据
+					if (url.includes('hitokoto')) {
+						quoteElement.textContent = data.hitokoto || data
+					} else if (url.includes('gushi.ci')) {
+						quoteElement.textContent = `${data.content} ——${data.author}`
+					} else if (url.includes('quotable')) {
+						quoteElement.textContent = `"${data.content}" —${data.author}`
+					}
+					return // 成功则退出
+				} catch (e) {
+					console.error(`API ${url} 失败:`, e)
+				}
+			}
+			quoteElement.textContent = '获取失败，请刷新重试'
+		}
+
+		fetchWithFallback(apis)
 	})
 </script>

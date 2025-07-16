@@ -94,7 +94,7 @@ const TriggerButton = forwardRef<HTMLButtonElement>((props, ref) => {
       aria-label="Open menu"
       {...props}
     >
-      <i className="iconfont icon-menu"></i>
+      <i className="iconfont icon-arrow_down1"></i>
     </button>
   )
 })
